@@ -1,7 +1,6 @@
 import { getAuth } from "@clerk/react-router/ssr.server";
 import { ConvexHttpClient } from "convex/browser";
 
-const convex = new ConvexHttpClient(import.meta.env.VITE_CONVEX_URL as string);
 import ContentSection from "~/components/homepage/content";
 import Footer from "~/components/homepage/footer";
 import Integrations from "~/components/homepage/integrations";
@@ -9,6 +8,7 @@ import Pricing from "~/components/homepage/pricing";
 import Team from "~/components/homepage/team";
 import { api } from "../../convex/_generated/api";
 import type { Route } from "./+types/home";
+import { fetchAction, fetchQuery } from "convex/nextjs";
 
 export function meta({}: Route.MetaArgs) {
   const title = "Sellit AI - Your AI-Powered Personal Selling Assistant";
@@ -60,14 +60,14 @@ export async function loader(args: Route.LoaderArgs) {
   // Parallel data fetching to reduce waterfall
   const [subscriptionData, plans] = await Promise.all([
     userId
-      ? convex.query(api.subscriptions.checkUserSubscriptionStatus, {
+      ? fetchQuery(api.subscriptions.checkUserSubscriptionStatus, {
           userId,
         }).catch((error) => {
           console.error("Failed to fetch subscription data:", error);
           return null;
         })
       : Promise.resolve(null),
-    convex.action(api.subscriptions.getAvailablePlans),
+    fetchAction(api.subscriptions.getAvailablePlans),
   ]);
 
   return {
