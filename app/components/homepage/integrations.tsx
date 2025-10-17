@@ -61,11 +61,10 @@ export default function IntegrationsSection({
             </div>
             <div className="mx-auto mt-6 max-w-lg space-y-6 text-center sm:mt-0 sm:text-left">
               <h2 className="text-balance text-3xl font-semibold md:text-4xl">
-                React Starter Kit
+                Sellit AI
               </h2>
-              <p className="text-muted-foreground">
-                This powerful starter kit is designed to help you launch your
-                SAAS application quickly and efficiently.
+              <p className="text-muted-foreground text-lg">
+                Perplexity for selling your unused items. Your AI-powered personal selling assistant that automates every step.
               </p>
 
               <div className="flex gap-3">
@@ -82,18 +81,14 @@ export default function IntegrationsSection({
                   >
                     {loaderData?.isSignedIn
                       ? loaderData?.hasActiveSubscription
-                        ? "Go to Dashboard (Demo)"
-                        : "Subscribe Now (Demo)"
-                      : "Get Started (Demo)"}
+                        ? "Start Selling"
+                        : "Try Sellit AI"
+                      : "Start Selling for Free"}
                   </Link>
                 </Button>
                 <Button variant="outline" size="sm" asChild>
-                  <Link
-                    to="https://github.com/michaelshimeles/react-starter-kit"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    ⭐️ Star on GitHub
+                  <Link to="#features">
+                    See How It Works
                   </Link>
                 </Button>
               </div>

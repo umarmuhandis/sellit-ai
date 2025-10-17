@@ -11,11 +11,11 @@ import { api } from "../../convex/_generated/api";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
-  const title = "React Starter Kit - Launch Your SAAS Quickly";
+  const title = "Sellit AI - Your AI-Powered Personal Selling Assistant";
   const description =
-    "This powerful starter kit is designed to help you launch your SAAS application quickly and efficiently.";
-  const keywords = "React, Starter Kit, SAAS, Launch, Quickly, Efficiently";
-  const siteUrl = "https://www.reactstarter.xyz/";
+    "Perplexity for selling your unused items. Automate every step of selling online with AI - from pricing to listing to buyer communication.";
+  const keywords = "AI, selling assistant, resale, marketplace automation, sell items online, declutter, secondhand, AI pricing";
+  const siteUrl = "https://www.sellitai.com/";
   const imageUrl =
     "https://jdj14ctwppwprnqu.public.blob.vercel-storage.com/rsk-image-FcUcfBMBgsjNLo99j3NhKV64GT2bQl.png";
 
@@ -34,7 +34,7 @@ export function meta({}: Route.MetaArgs) {
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
     { property: "og:url", content: siteUrl },
-    { property: "og:site_name", content: "React Starter Kit" },
+    { property: "og:site_name", content: "Sellit AI" },
     { property: "og:image", content: imageUrl },
 
     // Twitter Card
@@ -49,7 +49,7 @@ export function meta({}: Route.MetaArgs) {
       name: "keywords",
       content: keywords,
     },
-    { name: "author", content: "Ras Mic" },
+    { name: "author", content: "Sellit AI" },
     { name: "favicon", content: imageUrl },
   ];
 }

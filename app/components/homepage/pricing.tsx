@@ -69,11 +69,10 @@ export default function Pricing({ loaderData }: { loaderData: any }) {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl space-y-6 text-center">
           <h1 className="text-center text-4xl font-semibold lg:text-5xl">
-            Pricing that Scales with You
+            Sell More, Stress Less
           </h1>
           <p>
-            Choose the plan that fits your needs. All plans include full access
-            to our platform.
+            Choose the plan that fits your selling goals. Every plan includes AI-powered pricing, automated listings, and smart buyer communication.
           </p>
         </div>
 
@@ -173,7 +172,7 @@ export default function Pricing({ loaderData }: { loaderData: any }) {
                             }
                           })()
                         ) : (
-                          "Get Started (Demo)"
+                          "Start Selling"
                         )}
                       </Button>
                     </CardHeader>
@@ -184,22 +183,28 @@ export default function Pricing({ loaderData }: { loaderData: any }) {
                       <ul className="list-outside space-y-3 text-sm">
                         <li className="flex items-center gap-2">
                           <Check className="size-3" />
-                          All features included
+                          AI-powered price optimization
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="size-3" />
-                          Priority support
+                          Automated listing generation
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <Check className="size-3" />
+                          Smart buyer communication
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <Check className="size-3" />
+                          Multi-platform posting
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <Check className="size-3" />
+                          Market insights & analytics
                         </li>
                         <li className="flex items-center gap-2">
                           <Check className="size-3" />
                           Cancel anytime
                         </li>
-                        {plan.isRecurring && (
-                          <li className="flex items-center gap-2">
-                            <Check className="size-3" />
-                            Recurring billing
-                          </li>
-                        )}
                       </ul>
                     </CardContent>
                   </Card>

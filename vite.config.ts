@@ -5,4 +5,12 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  server: {
+    host: true,
+    cors: true,
+    hmr: {
+      host: "a8cd14039a6b.ngrok-free.app",
+      protocol: "wss",
+    },
+  },
 });

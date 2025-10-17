@@ -8,21 +8,15 @@ export default function ContentSection() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="grid gap-6 md:grid-cols-2 md:gap-12">
           <h2 className="text-4xl font-medium">
-            The Starter Kit you need to start your SaaS application.
+            Stop losing money on unused items. Let AI do the selling for you.
           </h2>
           <div className="space-y-6">
             <p>
-              Stop rebuilding the same foundation over and over. RSK eliminates
-              months of integration work by providing a complete,
-              production-ready SaaS template with authentication, payments, and
-              real-time data working seamlessly out of the box.{" "}
+              Tired of letting valuable items gather dust? Sellit AI turns clutter into cash automatically. Just snap a photo and our AI handles everything—smart pricing based on real market data, compelling listings that sell, and even communicating with buyers.
             </p>
             <p>
-              <span className="font-bold">From idea to launch in weeks,</span>{" "}
-              not months. With TypeScript safety, modern UI components, and
-              scalable architecture built-in, you can validate your business
-              concept and start generating revenue while your competitors are
-              still setting up their development environment.{" "}
+              <span className="font-bold">From photo to profit in minutes,</span>{" "}
+              not days. While you focus on your life, Sellit AI researches comparable listings, writes optimized descriptions, handles negotiations, and helps you close deals faster. It's like having a professional reseller working 24/7 for you.
             </p>
             <Button
               asChild
@@ -30,8 +24,8 @@ export default function ContentSection() {
               size="sm"
               className="gap-1 pr-1.5"
             >
-              <Link to="#">
-                <span>Learn More</span>
+              <Link to="#pricing">
+                <span>Start Selling Now</span>
                 <ChevronRight className="size-2" />
               </Link>
             </Button>

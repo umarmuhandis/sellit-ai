@@ -1,6 +1,6 @@
 "use client";
 import { UserButton } from "@clerk/react-router";
-import { Github, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import React, { useCallback } from "react";
 import { Link } from "react-router";
 import { Button } from "~/components/ui/button";
@@ -48,8 +48,8 @@ export const Navbar = ({
     : loaderData.hasActiveSubscription ? "/dashboard" : "/pricing";
 
   const dashboardText = !loaderData?.isSignedIn 
-    ? "Get Started (Demo)"
-    : loaderData.hasActiveSubscription ? "Dashboard" : "Subscribe";
+    ? "Start Selling"
+    : loaderData.hasActiveSubscription ? "Dashboard" : "Start Selling";
   return (
     <header>
       <nav
@@ -71,7 +71,7 @@ export const Navbar = ({
                 className="flex items-center space-x-2 font-semibold text-xl"
                 prefetch="viewport"
               >
-                <img src="/rsk.png" alt="RSK Logo" className="h-12 w-12" />
+                <img src="/favicon.png" alt="Sellit AI Logo" className="h-12 w-12" />
               </Link>
 
               <button
@@ -115,14 +115,6 @@ export const Navbar = ({
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Link
-                  to="https://github.com/michaelshimeles/react-starter-kit"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center"
-                >
-                  <Github className="w-5 h-5" />
-                </Link>
                 {loaderData?.isSignedIn ? (
                   <div className="flex items-center gap-3">
                     <Button asChild size="sm">
