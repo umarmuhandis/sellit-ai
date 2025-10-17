@@ -1,27 +1,15 @@
 const members = [
   {
-    name: "Michael Shimeles",
-    role: "Co-Founder & CEO",
+    name: "Alex Zuev",
+    role: "Co-Founder, Product Wizard",
     avatar:
-      "https://pbs.twimg.com/profile_images/1927552295291564033/U8DD7JlB_400x400.jpg",
+      "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex&backgroundColor=b6e3f4",
   },
   {
-    name: "Ras Mic",
-    role: "Co-Founder & CTO",
+    name: "Umar Muhandis",
+    role: "Co-Founder, Tech Geek",
     avatar:
-      "https://pbs.twimg.com/media/GsOcrswWMAALjCG?format=jpg&name=medium",
-  },
-  {
-    name: "Micky",
-    role: "Co-Founder & CMO",
-    avatar:
-      "https://pbs.twimg.com/media/GrQYfZ7WAAAMy7i?format=jpg&name=medium",
-  },
-  {
-    name: "Mike",
-    role: "Co-Founder & COO",
-    avatar:
-      "https://pbs.twimg.com/media/GoRePdpXEAAb06Q?format=jpg&name=4096x4096",
+      "https://api.dicebear.com/7.x/avataaars/svg?seed=Umar&backgroundColor=c0aede",
   },
 ];
 
@@ -30,12 +18,12 @@ export default function TeamSection() {
     <section id="team" className="py-12 md:py-32">
       <div className="mx-auto max-w-3xl px-8 lg:px-0">
         <h2 className="mb-8 text-4xl font-bold md:mb-16 lg:text-5xl">
-          Our team
+          Meet the Team
         </h2>
 
         <div>
-          <h3 className="mb-6 text-lg font-medium">Leadership</h3>
-          <div className="grid grid-cols-2 gap-4 border-t py-6 md:grid-cols-4">
+          <h3 className="mb-6 text-lg font-medium">Co-Founders</h3>
+          <div className="grid grid-cols-2 gap-8 border-t py-6 md:gap-12">
             {members.map((member, index) => (
               <div key={index}>
                 <div className="bg-background size-20 rounded-full border p-0.5 shadow shadow-zinc-950/5">
