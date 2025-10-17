@@ -81,8 +81,8 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
   
   // Validate and sanitize color values
   const sanitizeColor = (color: string): string => {
-    // Only allow valid CSS color formats (hex, rgb, rgba, hsl, hsla, named colors)
-    const validColorPattern = /^(#[0-9a-fA-F]{3,8}|rgb\([^)]+\)|rgba\([^)]+\)|hsl\([^)]+\)|hsla\([^)]+\)|[a-zA-Z]+)$/;
+    // Allow valid CSS color formats (hex, rgb, rgba, hsl, hsla, named colors, CSS variables)
+    const validColorPattern = /^(#[0-9a-fA-F]{3,8}|rgb\([^)]+\)|rgba\([^)]+\)|hsl\([^)]+\)|hsla\([^)]+\)|var\([^)]+\)|[a-zA-Z]+)$/;
     return validColorPattern.test(color) ? color : 'transparent';
   };
 
