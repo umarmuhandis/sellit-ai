@@ -1,5 +1,7 @@
 import { getAuth } from "@clerk/react-router/ssr.server";
-import { fetchAction, fetchQuery } from "convex/nextjs";
+import { ConvexHttpClient } from "convex/browser";
+
+const convex = new ConvexHttpClient(import.meta.env.VITE_CONVEX_URL as string);
 import ContentSection from "~/components/homepage/content";
 import Footer from "~/components/homepage/footer";
 import Integrations from "~/components/homepage/integrations";
@@ -58,14 +60,14 @@ export async function loader(args: Route.LoaderArgs) {
   // Parallel data fetching to reduce waterfall
   const [subscriptionData, plans] = await Promise.all([
     userId
-      ? fetchQuery(api.subscriptions.checkUserSubscriptionStatus, {
+      ? convex.query(api.subscriptions.checkUserSubscriptionStatus, {
           userId,
         }).catch((error) => {
           console.error("Failed to fetch subscription data:", error);
           return null;
         })
       : Promise.resolve(null),
-    fetchAction(api.subscriptions.getAvailablePlans),
+    convex.action(api.subscriptions.getAvailablePlans),
   ]);
 
   return {

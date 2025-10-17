@@ -16,6 +16,11 @@ import "./app.css";
 import { Analytics } from "@vercel/analytics/react";
 
 const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Clerk Publishable Key");
+}
 
 export async function loader(args: Route.LoaderArgs) {
   return rootAuthLoader(args);
@@ -86,6 +91,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
   return (
     <ClerkProvider
       loaderData={loaderData}
+      publishableKey={PUBLISHABLE_KEY}
       signUpFallbackRedirectUrl="/"
       signInFallbackRedirectUrl="/"
     >
